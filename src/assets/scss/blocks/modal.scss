@@ -1,0 +1,77 @@
+.modal {
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+  padding: 3rem;
+  background-color: var(--bg-modal);
+  border: .2rem solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: var(--bg);
+  gap: 2rem;
+  @include breakpoint($sm-bp) {
+    padding: 1rem;
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  &__wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    inset: 0;
+    background-color: var(--bg-wrapper);
+    z-index: -2;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    @include breakpoint($sm-bp) {
+      gap: 1rem;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__input {
+    border-radius: 1.2rem;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 2rem;
+    border: 0.1rem solid var(--color-border);
+    @include breakpoint($sm-bp) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__close {
+    align-self: flex-end;
+  }
+
+  &__close svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__close:hover {
+    cursor: pointer;
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    color: var(--black);
+    @include breakpoint($sm-bp) {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__wrapper.active {
+    opacity: 1;
+    z-index: 11;
+  }
+}

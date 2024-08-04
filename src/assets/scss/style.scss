@@ -1,0 +1,102 @@
+@import './vendor/vars';
+@import './vendor/mixins';
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+
+  @include breakpoint($xl-bp) {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: calc(100vw / 375 * 10);
+  }
+}
+
+@font-face {
+  font-family: 'Gilroy-Regular';
+  src: url('../fonts/gilroy-regular.woff2') format('woff2'),
+  url('../fonts/gilroy-regular.woff') format('woff'),
+  url('../fonts/gilroy-regular.ttf') format('truetype');
+}
+
+body {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 400;
+  font-size: 1.8rem;
+  background-color: var(--bg);
+  color: var(--white);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 147.2rem;
+  margin: 0 auto;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+h1 {
+  font-size: 3rem;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2rem;
+  }
+}
+
+.lock-scroll {
+  overflow: hidden !important;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  scrollbar-gutter: stable !important;
+  overscroll-behavior-y: none !important;
+}
+
+::-webkit-scrollbar {
+   width: 0.8rem;
+   height: 0;
+   background-color: transparent;
+
+  @include breakpoint($sm-bp) {
+     width: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+   background-color: var(--blue);
+   border-radius: 10rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background-color: var(--bg-main);
+}
+
+/*--------- popup -------------*/
+@import './blocks/modal.scss';
+@import './blocks/success-modal.scss';
+@import './blocks/animation.scss';
+
+/*------pages------*/
+@import './page/main.scss';

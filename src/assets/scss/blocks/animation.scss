@@ -1,0 +1,32 @@
+@media (min-width:1024px) {
+
+  .element-animation-left {
+    opacity: 0;
+    transform: translateX(-40%);
+    transition-duration: 1s;
+  }
+
+  .element-animation-left.element-show {
+    opacity: 1;
+    transform: translateX(0);
+    transition-duration: 1s;
+  }
+
+  .element-animation {
+    transform: translateY(5rem);
+    opacity: 0;
+    transition-duration: 1s;
+  }
+
+  .element-animation-bottom {
+    opacity: 0;
+    transform: translateY(60%);
+    transition-duration: 2s;
+  }
+
+  .element-animation-bottom.element-show {
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 2s;
+  }
+}
